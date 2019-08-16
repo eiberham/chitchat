@@ -1,7 +1,12 @@
 import React from 'react';
+import './App.scss';
+import Login from './components/Login';
 
 export default function(){
     return (
-        <div>App</div>
+        <div className="container">
+            App
+            <Login/>
+        </div>
     )
 }

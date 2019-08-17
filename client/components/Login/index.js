@@ -4,7 +4,8 @@ import './login.scss';
 const Login = () => {
     return (
         <div className="login-wrapper">
-            <h1>ShitChat</h1>
+            <h1>Login</h1>
+            <span>Choose your nickname</span>
         </div>
     )
 };

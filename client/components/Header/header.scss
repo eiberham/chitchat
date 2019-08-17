@@ -1,4 +1,17 @@
 .header {
   grid-area: head;
-  background: rgba(aliceblue, .8);
+  grid-column: 1 / -1;
+  background: rgba(#626882, .8);
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  color: #fbe5e7;
+  p {
+    padding: 0;
+    margin: 0;
+    margin-inline-start: 8rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: normal;
+  }
 }

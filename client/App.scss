@@ -1,9 +1,17 @@
 .container {
+  font-family: 'Bree Serif', serif;
+  background: #f9f9f9;
+  width: 80vw;
+  margin: 2rem auto;
   display: grid;
-  grid-template-rows: 300px 300px;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-gap: 10px;
-  grid-template-areas: "head" "head" "head"
-                       "" "main" ""
-                       "foot" "foot" "foot"
+  grid-template-rows: 20vh 40vh 20vh;
+  grid-template-columns: 1fr repeat(2, minmax(300px, 1fr));
+  grid-gap: 0;
+  grid-template-areas: "head head head"
+                       "side main ."
+                       "foot foot foot";
+  & > * {
+    padding: 1rem;
+  }
+
 }

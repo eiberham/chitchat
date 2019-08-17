@@ -1,8 +1,12 @@
 .login-wrapper {
   grid-area: main;
-  background: rgba(skyblue, .6);
-  height: 100%;
+  grid-column: 2 / 4;
+  background: rgba(#f7ebeb, .6);
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  span {
+    font-size: 1.5rem;
+  }
 }

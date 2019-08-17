@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useReducer, useContext } from 'react';
 import './login.scss';
 
 const Login = () => {
     return (
         <div className="login-wrapper">
-            Login
+            <h1>ShitChat</h1>
         </div>
     )
 };

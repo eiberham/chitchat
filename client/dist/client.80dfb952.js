@@ -30609,7 +30609,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -30641,7 +30641,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+},{}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -30676,17 +30676,44 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../App.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../App.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/Login/login.scss":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/Login/login.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/Login/index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/Login/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+require("./login.scss");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+var Login = function Login() {
+  return _react.default.createElement("div", {
+    className: "login-wrapper"
+  }, _react.default.createElement("h1", null, "ShitChat"));
+};
+
+var _default = Login;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","./login.scss":"../components/Login/login.scss"}],"../components/Header/header.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/Header/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30696,19 +30723,19 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("./login.scss");
+require("./header.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Login = function Login() {
+var Header = function Header() {
   return _react.default.createElement("div", {
-    className: "login-wrapper"
-  }, "Login");
+    className: "header"
+  }, "Header");
 };
 
-var _default = Login;
+var _default = Header;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","./login.scss":"../components/Login/login.scss"}],"../App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./header.scss":"../components/Header/header.scss"}],"../App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -30722,14 +30749,16 @@ require("./App.scss");
 
 var _Login = _interopRequireDefault(require("./components/Login"));
 
+var _Header = _interopRequireDefault(require("./components/Header"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _default() {
   return _react.default.createElement("div", {
     className: "container"
-  }, "App", _react.default.createElement(_Login.default, null));
+  }, _react.default.createElement(_Header.default, null), _react.default.createElement("div", null, "Advs"), _react.default.createElement("div", null, _react.default.createElement(_Login.default, null)), _react.default.createElement("div", null, "Advs"), _react.default.createElement("div", null, "Foot"), _react.default.createElement("div", null, "Foot"), _react.default.createElement("div", null, "Foot"));
 }
-},{"react":"../node_modules/react/index.js","./App.scss":"../App.scss","./components/Login":"../components/Login/index.js"}],"../index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","./App.scss":"../App.scss","./components/Login":"../components/Login/index.js","./components/Header":"../components/Header/index.js"}],"../index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -30741,7 +30770,7 @@ var _App = _interopRequireDefault(require("./App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render(_react.default.createElement(_App.default, null), document.querySelector("#app"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../App.js"}],"../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","./App":"../App.js"}],"../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30769,7 +30798,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45565" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38883" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -30944,5 +30973,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../.nvm/versions/node/v8.16.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../index.js"], null)
+},{}]},{},["../../../../../usr/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../index.js"], null)
 //# sourceMappingURL=/client.80dfb952.js.map

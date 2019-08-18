@@ -1,14 +1,16 @@
+const mongoose = require('mongoose');
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLID } = graphql;
+const { GraphQLObjectType, GraphQLID, GraphQLList } = graphql;
 const UserType = require('./user_type');
+const User = mongoose.model('user');
 
 const RootQueryType = new GraphQLObjectType({
     name: 'RootQueryType',
     fields: {
         user: {
-            type: UserType,
+            type: new GraphQLList(UserType),
             resolve(parentValue, args, req){
-                return req.user;
+                return User.find({});
             }
         }
     }

@@ -1,9 +1,11 @@
 .side{
+  grid-area: side;
+  grid-column: auto / span 1;
   background: rgba(#545871, .95);
-  display: flex;
+  /*display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   color: #ecf0f3;
 
   h1{

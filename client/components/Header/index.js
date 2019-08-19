@@ -7,7 +7,7 @@ const Header = () => {
         <div className="header">
            <FaRocketchat color="white"/>
            <span> ChitChat</span>
-           <p>Spread ur stupidity and never get banned ...</p>
+           <p>Spread nonsense and never get banned ...</p>
         </div>
     )
 };

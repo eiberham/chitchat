@@ -1,7 +1,7 @@
-import gql from 'graphql-tag';
+import { gql } from 'apollo-boost';
 
 export default gql`
-    mutation Login($email: String, $password: String){
+    mutation Login($email: String!, $password: String!){
         login(email: $email, password: $password){
             id
             email

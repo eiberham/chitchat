@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const schema = require('./schema/schema');
 
 const http = require('http').createServer(app);
@@ -51,6 +52,7 @@ app.use(session({
 
 
 app.use(bodyParser.json());
+app.use(cors());
 // Instruct Express to pass on any request made to the '/graphql' route
 // to the GraphQL instance.
 app.use('/graphql', expressGraphQL({

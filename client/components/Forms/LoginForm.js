@@ -46,6 +46,7 @@ const LoginForm = (props) => {
                         id="password"
                         name="password"
                         label="Password"
+                        type="password"
                         helperText={touched.password ? errors.password : ""}
                         error={touched.password && Boolean(errors.password)}
                         value={password}

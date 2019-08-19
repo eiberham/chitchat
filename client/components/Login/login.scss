@@ -3,11 +3,16 @@
   //grid-column: 2 / 4;
   grid-column: auto / span 2;
   background: rgba(#f7ebeb, .6);
-  /*display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;*/
+  align-items: center;
 
   span {
     font-size: 1.5rem;
+  }
+
+  .sign-up__link {
+    font-size: 0.9rem;
+    margin: 2rem;
   }
 }

@@ -65,7 +65,15 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', (socket) => {
-    console.log('someone has just connected');
+    io.emit('someone has just connected');
+    const id = socket.id;
+    socket.on('chat message', function(msg){
+        console.log('message: ' + msg);
+        io.emit('received', {message: msg});
+    });
+    socket.on('disconnect', function(){
+        console.log('user disconnected');
+    });
 });
 
 http.listen(port, () => {

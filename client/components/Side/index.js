@@ -6,11 +6,10 @@ export default function(){
         <div className="side">
             <h1>You can:</h1>
             <ul>
-                <li>Talk with morons</li>
-                <li>Pick up fatty hairy gals</li>
-                <li>Face the reality of internet socializing</li>
-                <li>Get dissapointed</li>
-                <li>Screw them all</li>
+                <li>Have a nice convo</li>
+                <li>Meet people who shares your same interests</li>
+                <li>Enhance your english skills</li>
+                <li>Make new friends</li>
             </ul>
         </div>
     )

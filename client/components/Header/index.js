@@ -1,13 +1,13 @@
 import React from 'react';
 import './header.scss';
-import { FaRocketchat } from 'react-icons/fa';
+import { FaCommentDots } from 'react-icons/fa';
 
 const Header = () => {
     return (
         <div className="header">
-           <FaRocketchat color="white"/>
+           <FaCommentDots color="white"/>
            <span> ChitChat</span>
-           <p>Spread nonsense and never get banned ...</p>
+           <p>Connect with people from all over the globe ...</p>
         </div>
     )
 };

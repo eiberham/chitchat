@@ -2,14 +2,16 @@ import React from 'react';
 import './login.scss';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import useLogin from "../../hooks/useLogin";
 import LoginForm from "../Forms/LoginForm";
 import Loading from '../Loading';
 import { useMutation } from '@apollo/react-hooks';
 import mutation from '../../mutations/Login';
+import { Link } from 'react-router-dom';
 import history from '../../history';
 
-const SignInSchema = Yup.object().shape({
+import useChitChat from '../../hooks/useChitChat';
+
+const LoginSchema = Yup.object().shape({
     email: Yup.string()
         .email('Invalid email')
         .required('Required'),
@@ -20,26 +22,29 @@ const SignInSchema = Yup.object().shape({
 });
 
 const Login = () => {
-    const { isLoggedin } = useLogin();
     const [auth, { data, loading }] = useMutation(mutation);
+    const { setLoggedIn, isLoggedIn } = useChitChat();
+    console.log("logueado?: ", isLoggedIn);
+
     console.log("rendering login");
     return (
         <div className="login-wrapper">
-            { auth && !loading ? (
+            { !isLoggedIn && !loading ? (
                 <React.Fragment>
                     <h1>Login</h1>
                     <span>Enter your credentials</span>
                     <Formik
                         render={props => <LoginForm {...props} />}
                         initialValues={{ email: '', password: '' }}
-                        validationSchema={SignInSchema}
+                        validationSchema={LoginSchema}
                         onSubmit={ async ({email, password}, actions) => {
                             try {
                                 const {data: {login}} = await auth({ variables: { email, password } });
                                 if(login) {
+                                    setLoggedIn(true);
                                     history.push('/chat')
                                 } else {
-                                    console.log('Invaid credentials');
+                                    console.log('Invalid credentials');
                                 }
                             }catch(error){
                                 console.error(error);
@@ -47,6 +52,9 @@ const Login = () => {
 
                         }}
                     />
+                    <div className="sign-up__link">
+                        Don't have an account ? <Link to="/signup">Sign up </Link>
+                    </div>
                 </React.Fragment>
             ) : (
                 <Loading />

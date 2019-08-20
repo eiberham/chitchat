@@ -1,0 +1,8 @@
+.signup-wrapper {
+  grid-area: main;
+  grid-column: auto / span 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

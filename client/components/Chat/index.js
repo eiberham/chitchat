@@ -22,7 +22,6 @@ const Chat = () => {
 
     useEffect(
         () => {
-            console.log("se ejecuta el useEffect");
             socket.on("received", data  =>  {
                 setMessages((messages) => [ ...messages, {message: data.message}])
             });
@@ -43,6 +42,7 @@ const Chat = () => {
                 validationSchema={ChatSchema}
                 onSubmit={ async ({message}, actions) => {
                     socket.emit('chat message', message);
+                    actions.resetForm();
                 }}
             />
         </div>

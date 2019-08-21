@@ -23,7 +23,7 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
     const [auth, { data, loading }] = useMutation(mutation);
-    const { setLoggedIn, isLoggedIn } = useChitChat();
+    const { setLoggedIn, isLoggedIn, setUser } = useChitChat();
     console.log("logueado?: ", isLoggedIn);
 
     console.log("rendering login");
@@ -41,6 +41,7 @@ const Login = () => {
                             try {
                                 const {data: {login}} = await auth({ variables: { email, password } });
                                 if(login) {
+                                    setUser(login);
                                     setLoggedIn(true);
                                     history.push('/chat')
                                 } else {

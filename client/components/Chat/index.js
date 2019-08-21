@@ -16,9 +16,9 @@ const ChatSchema = Yup.object().shape({
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
-    const { setLoggedIn, isLoggedIn } = useChitChat();
+    const { getUser } = useChitChat();
     const socket = io('http://localhost:5000', {transports: ['websocket'], upgrade: false});
-    console.log("logueado?: ", isLoggedIn);
+    console.log("usuario: ", getUser());
 
     useEffect(
         () => {
@@ -33,7 +33,7 @@ const Chat = () => {
         <div className="chat-wrapper">
             <ul id="messages">
                 { messages.length > 0 && messages.map( ({message}) => (
-                    <li>{message}</li>
+                    <li><strong>{`${getUser().name}`}</strong> : {`${message}`}</li>
                 ))}
             </ul>
             <Formik

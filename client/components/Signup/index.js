@@ -2,7 +2,10 @@ import React from 'react';
 import './signup.scss';
 import * as Yup from "yup";
 import {Formik} from "formik";
+import { useMutation } from '@apollo/react-hooks';
+import mutation from '../../mutations/Signup';
 import SignupForm from "../Forms/SignupForm";
+import history from '../../history';
 
 const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -21,6 +24,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Signup = () => {
+    const [signup, { data, loading }] = useMutation(mutation);
     return (
         <div className="signup-wrapper">
             <h1>Sign Up</h1>
@@ -29,8 +33,12 @@ const Signup = () => {
                 render={props => <SignupForm {...props} />}
                 initialValues={{ name: '', gender: '', email: '', password: ''}}
                 validationSchema={SignupSchema}
-                onSubmit={ async (values, actions) => {
-                    console.log("submitted", values);
+                onSubmit={ async ({email, name, gender, password}, actions) => {
+                    const {data} = await signup({variables: {email, name, gender, password}});
+                    if(data.signup){
+                        actions.resetForm();
+                        history.push('/login');
+                    }
                 }}
             />
         </div>

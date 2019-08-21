@@ -10,5 +10,13 @@ function login({email, password, req}){
         })
     })
 }
+function signup({ email, name, gender, password, req }) {
+    const user = new User({ email, name, gender, password });
+    return User.findOne({ email })
+        .then(existingUser => {
+            if (existingUser) { throw new Error('Email in use'); }
+            return user.save();
+        })
+}
 
-module.exports = { login };
+module.exports = { login, signup };

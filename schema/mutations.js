@@ -16,10 +16,12 @@ const mutation = new GraphQLObjectType({
             type: UserType,
             args: {
                 email: { type: new GraphQLNonNull(GraphQLString) },
+                name: { type: new GraphQLNonNull(GraphQLString)},
+                gender: { type: new GraphQLNonNull(GraphQLString)},
                 password: { type: new GraphQLNonNull(GraphQLString) }
             },
-            resolve(parentValue, {email, password}, req){
-                return true;
+            resolve(parentValue, {email, name, gender, password}, req){
+                return auth.signup({email, name, gender, password,  req});
             }
         },
         logout: {

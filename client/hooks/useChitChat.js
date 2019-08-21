@@ -8,9 +8,15 @@ const useChitChat = () => {
         setState(state => ({ ...state, authenticated: value }));
     }
 
+    function setUser(user){
+        setState(state => ({...state, user}));
+    }
+
     return {
         setLoggedIn,
         isLoggedIn: state.authenticated,
+        setUser,
+        getUser: () => state.user
     }
 };
 

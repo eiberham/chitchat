@@ -37,7 +37,7 @@ const Signup = () => {
                     const {data} = await signup({variables: {email, name, gender, password}});
                     if(data.signup){
                         actions.resetForm();
-                        history.push('/login');
+                        history.push('/');
                     }
                 }}
             />

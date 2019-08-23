@@ -4,14 +4,20 @@
   grid-area: foot;
   grid-column: 1 / -1;
   color: white;
-  display: flex;
+  /*display: flex;
   justify-content: space-around;
+  align-items: center;*/
+  display: grid;
   align-items: center;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
   .item {
     background: transparent;
+    background: blue;
     height: 12vh;
-    width: 10vw;
+    width: fit-content;
+
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -18,6 +18,7 @@ html {
     font-family: 'Bree Serif', serif;
     background: #f9f9f9;
     min-height: max-content;
+    //width: 1000px;
     max-width: 80%;
     margin: 2rem auto;
     box-shadow: 0px 1px 15px 1px rgba(69,65,78,0.08);
@@ -26,12 +27,14 @@ html {
     grid-template-rows: repeat(auto-fill, minmax(220px, min-content));
     //grid-template-columns: 1fr repeat(2, minmax(300px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    //grid-template-columns: repeat(auto-fill, 500px);
     //grid-auto-rows: min-content;
     grid-auto-rows: minmax(220px, max-content);
+    //grid-gap: 10px;
     grid-gap: 0;
     grid-template-areas: "head head head"
-    "side main main"
-    "foot foot foot";
+                         "side main main"
+                         "foot foot foot";
     & > * {
       padding: 1rem;
     }

@@ -1,5 +1,4 @@
-.footer{
-  //background: rgba(#dee0ed, .8);
+.footer {
   background: #101010;
   grid-area: foot;
   grid-column: span 3;
@@ -8,10 +7,6 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  /*display: grid;
-  align-items: center;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
 
   .item {
     background: transparent;

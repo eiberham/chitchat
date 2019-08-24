@@ -50,4 +50,4 @@ And last but not least start the application
 foo@bar:~$ npm start
 ```
 
-Made with ❤ by Abraham
+<p align="right">MADE WITH ❤ BY ABRAHAM</p>

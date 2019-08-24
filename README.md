@@ -49,3 +49,5 @@ And last but not least start the application
 ```console
 foo@bar:~$ npm start
 ```
+
+Made with ❤ by Abraham

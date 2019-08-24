@@ -17,7 +17,7 @@ const renderLoader = () => <p>Loading</p>;
 export default function(){
     return (
         <ChitChatProvider>
-            <div className="poligon"></div>
+            <div className="polygon"></div>
             <div className="container">
                 <Suspense fallback={renderLoader()}>
                     <Header />

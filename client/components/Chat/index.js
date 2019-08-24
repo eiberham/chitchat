@@ -30,7 +30,7 @@ const Chat = () => {
     );
 
     return (
-        <div className="chat-wrapper">
+        <main className="chat">
             <ul id="messages">
                 { messages.length > 0 && messages.map( ({message}) => (
                     <li><strong>{`${getUser().name}`}</strong> : {`${message}`}</li>
@@ -45,7 +45,7 @@ const Chat = () => {
                     actions.resetForm();
                 }}
             />
-        </div>
+        </main>
     )
 };
 

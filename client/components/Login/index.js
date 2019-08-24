@@ -28,7 +28,7 @@ const Login = () => {
 
     console.log("rendering login");
     return (
-        <div className="login-wrapper">
+        <main className="login">
             { !isLoggedIn && !loading ? (
                 <React.Fragment>
                     <h1>Login</h1>
@@ -61,7 +61,7 @@ const Login = () => {
                 <Loading />
             )}
 
-        </div>
+        </main>
     )
 };
 

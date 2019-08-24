@@ -1,7 +1,5 @@
-.login-wrapper {
+.login {
   grid-area: main;
-  //grid-column: 2 / 4;
-  grid-column: auto / span 2;
   background: rgba(#f7ebeb, .6);
   display: flex;
   flex-direction: column;

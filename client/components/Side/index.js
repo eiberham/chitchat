@@ -3,7 +3,7 @@ import './side.scss';
 
 export default function(){
     return (
-        <div className="side">
+        <aside className="side">
             <h1>You can:</h1>
             <ul>
                 <li>Have a nice convo</li>
@@ -11,6 +11,6 @@ export default function(){
                 <li>Enhance your english skills</li>
                 <li>Make new friends</li>
             </ul>
-        </div>
+        </aside>
     )
 }

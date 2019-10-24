@@ -30,6 +30,14 @@ For further information you can clone the project, this is a screenshot of the a
   <img src="chitchat.png" />
 </p>
 
+<table>
+  <tr>
+    <td><img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/wwleak/chitchat?style=for-the-badge"></td>
+    <td><img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wwleak/chitchat?style=for-the-badge"></td>
+    <td><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wwleak/chitchat?style=for-the-badge"></td>
+    <td><img alt="GitHub issues" src="https://img.shields.io/github/issues/wwleak/chitchat?style=for-the-badge"></td>
+  </tr>
+</table>
 
 ## How to run it ?
 

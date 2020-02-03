@@ -20,5 +20,6 @@
     "graphql": "^0.10.0",
     "mongoose": "^5.4.19",
     "socket.io": "^2.2.0"
-  }
+  },
+  "devDependencies": {}
 }

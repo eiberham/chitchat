@@ -55,7 +55,7 @@ foo@bar:~$ npm i && cd client && npm i
 And last but not least start the application
 
 ```console
-foo@bar:~$ npm start
+foo@bar:~$ npm start && cd client && npm run start
 ```
 
 <p align="right">MADE WITH ❤ BY ABRAHAM</p>

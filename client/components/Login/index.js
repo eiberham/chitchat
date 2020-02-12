@@ -43,7 +43,7 @@ const Login = () => {
                                 if(login) {
                                     setUser(login);
                                     setLoggedIn(true);
-                                    history.push('/chat')
+                                    history.push('/nick')
                                 } else {
                                     console.log('Invalid credentials');
                                 }

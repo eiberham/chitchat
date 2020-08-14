@@ -65,12 +65,19 @@ app.get('/', function(req, res){
 });
 
 io.on('connection', (socket) => {
-    io.emit('someone has just connected');
+    
+    io.emit('someone has just connected: ');
     const id = socket.id;
-    socket.on('chat message', function(msg){
-        console.log('message: ' + msg);
-        io.emit('received', {message: msg});
+
+    io.emit('received', {
+        type: 'server',
+        message: `${socket.handshake.query.name} has just connected`
     });
+
+    socket.on('chat message', function(message){
+        io.emit('received', { type: 'user', message });
+    });
+
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });

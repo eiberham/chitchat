@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './chat.scss';
 import { Formik } from 'formik';
 import io from 'socket.io-client';
@@ -17,23 +17,37 @@ const ChatSchema = Yup.object().shape({
 const Chat = () => {
     const [messages, setMessages] = useState([]);
     const { getUser } = useChitChat();
-    const socket = io('http://localhost:5000', {transports: ['websocket'], upgrade: false});
+    const socket = useMemo(() => 
+        io('http://localhost:5000', {
+            transports: ['websocket'], 
+            upgrade: false,
+            query: { ...getUser() }
+        })
+    , []);
     console.log("usuario: ", getUser());
 
     useEffect(
         () => {
             socket.on("received", data  =>  {
-                setMessages((messages) => [ ...messages, {message: data.message}])
+                console.log("data: ", data);
+                setMessages((messages) => [ ...messages, { ...data }])
             });
-
-        }, []
+            () => socket.removeAllListeners()
+        }, [socket]
     );
 
     return (
         <main className="chat">
             <ul id="messages">
-                { messages.length > 0 && messages.map( ({message}) => (
-                    <li><strong>{`${getUser().name}`}</strong> : {`${message}`}</li>
+                { messages.length > 0 && messages.map( ({type, message}, key) => (
+                    <React.Fragment key={key}>
+                        {type === 'server' ? (
+                                <li key={key}><strong><em>{`${message}`}</em></strong></li>
+                            ) : ( 
+                                <li key={key}><strong>{`${getUser().name}`}</strong> : {`${message}`}</li>
+                            )
+                        }
+                    </React.Fragment>
                 ))}
             </ul>
             <Formik

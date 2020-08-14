@@ -64,7 +64,36 @@ app.get('/', function(req, res){
     res.send('<h1>Chat app</h1>');
 });
 
-io.on('connection', (socket) => {
+// ------------------------  Socket IO
+
+function init(namespaces){
+    namespaces.forEach(namespace => {
+        const group = io.of('channel-' + namespace)
+        group.on('connection', (socket) => {
+    
+            group.emit('someone has just connected: ');
+            const id = socket.id;
+        
+            group.emit('received', {
+                type: 'server',
+                message: `** ${socket.handshake.query.name} has just connected **`
+            });
+        
+            socket.on('chat message', function(message){
+                group.emit('received', { type: 'user', message });
+            });
+        
+            socket.on('disconnect', function(){
+                console.log('user disconnected');
+            });
+        })
+    });
+}
+
+const namespaces = ['english', 'random'];
+init.call(null, namespaces);
+
+/* io.on('connection', (socket) => {
     
     io.emit('someone has just connected: ');
     const id = socket.id;
@@ -81,7 +110,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
-});
+}); */
 
 http.listen(port, () => {
     console.log(`server running on port ${port}`);
